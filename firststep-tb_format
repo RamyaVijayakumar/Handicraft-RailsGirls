@@ -1,0 +1,48 @@
+
+    <% @handicrafts.each do |handicraft| %>
+      <tr>
+        <td><%= handicraft.name %></td>
+        <td>$<%= handicraft.price %></td>
+        <td><%= handicraft.description %></td>
+        <td><img src=<%= handicraft.image %>></td>
+        <td><%= handicraft.owner_name %></td>
+        <td><%= link_to 'Show', handicraft %></td>
+        <td><%= link_to 'Edit', edit_handicraft_path(handicraft) %></td>
+        <td><%= link_to 'Destroy', handicraft, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+
+
+<% @handicrafts.each do |handicraft| %>
+  <div class="col-sm-3">
+    <div class="col-item">
+      <div class="photo">
+        <img src=<%= handicraft.image %> class="img-responsive" alt="a" />
+      </div>
+      <div class="info">
+        <div class="row">
+          <div class="price col-md-6">
+            <h5>handicraft.name</h5>
+            <h5 class="price-text-color"><%= handicraft.price %></h5>
+            <h5>Owner: <%= handicraft.owner_name %></h5>
+          </div>
+          <div class="rating hidden-sm col-md-6">
+            <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+            </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+            </i><i class="fa fa-star"></i>
+          </div>
+        </div>
+        <div class="separator clear-left">
+          <p class="btn-add">
+          <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a>
+          </p>
+          <p class="btn-details">
+            <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a>
+          </p>
+        </div>
+        <div class="clearfix">
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

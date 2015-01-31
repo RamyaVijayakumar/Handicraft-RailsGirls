@@ -1,0 +1,34 @@
+<br><br><br>
+<h2>Description for: <%= @handicraft.name %></h2>
+<br><br>
+<div class="col-md-8"> 
+  <table class="pull-left table table-hover">
+   <tbody>
+    <tr>
+     <td class="h3"><strong>Name:</strong></td>
+     <td class="h3"><%= @handicraft.name %></td>
+   </tr> 
+    <tr>
+     <td class="h3"><strong>Price:</strong></td>
+     <td class="h3">$<%= @handicraft.price %></td>
+   </tr> 
+    <tr>
+     <td class="h3"><strong>Description:</strong></td>
+     <td class="h3"><%= @handicraft.description %></td>
+   </tr> 
+    <tr>
+     <td class="h3"><strong>Owner name:</strong></td>
+     <td class="h3"><%= @handicraft.owner_name %></td>
+   </tr>    
+  </tbody>
+  </table>
+</div>
+
+<div class="col-md-4"> 
+  <img src=<%= @handicraft.image %> alt="teste" class="img-thumbnail">  
+</div>
+
+<br><br>
+
+<%= link_to 'Edit', edit_handicraft_path(@handicraft) %> |
+<%= link_to 'Back', handicrafts_path %>
